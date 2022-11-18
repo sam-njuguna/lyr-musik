@@ -9,10 +9,9 @@ const AroundYou = () => {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetSongCountryQuery(country);
   useEffect(() => {
-    console.log(process.env);
     axios
       .get(
-        `https://geo.ipify.org/api/v2/country?apiKey= ${
+        `https://geo.ipify.org/api/v2/country?apiKey=${
           import.meta.env.VITE_GEO_API_KEY
         }`
       )
